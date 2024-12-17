@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -41,3 +42,42 @@ const TopBar = () => {
 }
 
 export default TopBar
+=======
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image'
+
+const TopBar = () => {
+  return (
+    <div className="container mx-auto h-[36px] bg-[#F5F5F5] md:flex items-center justify-between">
+   
+     <div className="container mx-auto justify-between">
+     <div className='w-[19px] h-[18px] md:flex items-center justify-between'>
+     <Image src='/Vector.png' alt='vector' width={19} height={18} style={{width:'auto', height: 'auto'}}/>
+<div>
+   
+      <ul className='mx-auto flex gap-4'>
+        
+      <li className='whitespace-nowrap'><Link href="/productlist">Find a Store </Link></li>
+      <span >|</span>
+
+        <li><Link href="/contactus">Help</Link></li>
+        <span>|</span>
+    
+        <li className='whitespace-nowrap'><Link href="/joinus">Join Us</Link></li>
+        <span>|</span>
+
+        <li><Link href="/login">Login</Link></li>
+        <span>|</span>
+      </ul>
+
+     
+        </div>
+        </div>
+        </div>
+    </div>
+  );
+};
+
+export default TopBar;
+>>>>>>> 4160730 (uiuxhackathon)
