@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "hackathon",
-=======
-  "name": "nike",
->>>>>>> 4160730 (uiuxhackathon)
   "version": "0.1.0",
   "private": true,
   "scripts": {
