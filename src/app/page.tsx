@@ -1,26 +1,20 @@
-import Hero from './components/Hero';
-import ProductList from './productlist/page';
-import JoinUs from './joinus/page';
-import LogIn from './login/page';
-import ProductDetail from './productdetail/page';
-import ContactUs from './contactus/page';
-import Cart from './cart/page';
-const Home = () => {
-    return (
+import React from 'react'
+import HomePage from './HomePage/page'
+import Link from 'next/link'
 
-    <div className='max-w-7xl mx-auto h-[5925]'>
 
-<Hero/>
-<ProductList/>
-<ProductDetail/>
-<ContactUs/>
-<LogIn/>
-<Cart/>
-<JoinUs/>
+
+const page = () => {
+  return (
+    <div className='max-w-7xl mx-auto min-h-screen'>
+
+<Link href="/HomePage"></Link>
+<HomePage/>
 
     </div>
-    );
-};
+   
+    
+  )
+}
 
-export default Home;
-
+export default page

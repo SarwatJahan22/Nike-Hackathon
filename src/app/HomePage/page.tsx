@@ -1,20 +1,20 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 import { IoChevronForwardOutline, IoArrowBack } from "react-icons/io5";
 
-const Hero = () => {
+const HomePage = () => {
   return (
-    <div className="bg-white text-black w-full mx-auto">
+    <div className="bg-white text-black">
       {/* Header Section */}
       <div className="h-[58px] flex flex-col justify-center items-center bg-gray-200">
         <h1 className="font-bold text-lg md:text-2xl">Hello Nike App</h1>
         <div className="flex justify-center text-sm md:text-base font-normal">
-          <p>Download the app to access everything Nike. </p>
+          <p>Download the app to access everything Nike.</p>
           <p className="underline pl-1">Get your Great</p>
         </div>
       </div>
 
-      {/* Hero Image Section */}
+      {/* Hero Image */}
       <div className="flex justify-center py-8">
         <Image
           src="/Image.png"
@@ -25,30 +25,8 @@ const Hero = () => {
         />
       </div>
 
-      {/* Intro Section */}
-      <div className="text-center py-8">
-        <h4 className="font-medium text-sm md:text-lg leading-[24px]">
-          First Look
-        </h4>
-        <h2 className="text-3xl md:text-4xl lg:text-6xl font-medium">
-          NIKE AIR MAX PULSE
-        </h2>
-        <p className="text-sm md:text-base mt-4">
-          Extreme comfort. Hyper durable. Max volume. Introducing the Air Max
-          Pulse — designed to push you past limits and help you go to max.
-        </p>
-        <div className="flex justify-center gap-4 mt-4">
-          <button className="bg-black rounded-full px-4 py-2 text-white text-sm">
-            Notify Me
-          </button>
-          <button className="bg-black rounded-full px-4 py-2 text-white text-sm">
-            Shop Air Max
-          </button>
-        </div>
-      </div>
-
-           {/* Best of Air Max Section */}
-           <div className="py-8 px-4">
+      {/* Air Max Section */}
+      <div className="py-8 px-4">
         <div className="flex justify-between items-center">
           <h3 className="font-medium text-lg">Best of Air Max</h3>
           <div className="flex items-center gap-2">
@@ -65,49 +43,36 @@ const Hero = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-          <div className="text-center">
-            <Image
-              src="/Image (1).png"
-              alt="Nike Women  Shoes"
-              width={441}
-              height={441}
-              className="mx-auto"
-            />
-            <p className="mt-2 text-sm font-medium">
-              Nike Air Max Pulse <br /> Women&apos; Shoes - ₹13.995
-            </p>
-          </div>
-          <div className="text-center">
-            <Image
-              src="/Image (1).png"
-              alt="Nike Men Shoes"
-              width={441}
-              height={441}
-              className="mx-auto"
-            />
-            <p className="mt-2 text-sm font-medium">
-              Nike Air Max Pulse <br /> Men&apos;s Shoes - ₹13.995
-            </p>
-          </div>
-          <div className="text-center">
-            <Image
-              src="/Image (2).png"
-              alt="Nike Men's Air Max 97"
-              width={441}
-              height={441}
-              className="mx-auto"
-            />
-            <p className="mt-2 text-sm font-medium">
-              Nike Air Max 97 SE <br /> Men&apos;s Shoes - ₹16.995
-            </p>
-          </div>
+          {[{
+            src: '/Image (1).png',
+            alt: "Nike Women Shoes",
+            description: "Nike Air Max Pulse Women\'s Shoes - ₹13.995",
+          }, {
+            src: '/Image (1).png',
+            alt: "Nike Men Shoes",
+            description: "Nike Air Max Pulse Men\'s Shoes - ₹13.995",
+          }, {
+            src: '/Image (2).png',
+            alt: "Nike Men's Air Max 97",
+            description: "Nike Air Max 97 SE Men\'s Shoes - ₹16.995",
+          }].map(({ src, alt, description }, index) => (
+            <div key={index} className="text-center">
+              <Image
+                src={src}
+                alt={alt}
+                width={441}
+                height={441}
+                className="mx-auto"
+              />
+              <p className="mt-2 text-sm font-medium">{description}</p>
+            </div>
+          ))}
         </div>
       </div>
+
       {/* Featured Section */}
       <div className="w-full bg-gray-50 py-8 px-4">
-        
         <p className="font-semibold py-2 text-[23px]">Featured</p>
-        
         <div className="flex justify-center">
           <Image
             src="/Image (3).png"
@@ -120,16 +85,13 @@ const Hero = () => {
         <div className="text-center mb-6">
           <h3 className="text-4xl font-medium py-6">STEP INTO WHAT FEELS GOOD</h3>
           <p className="mt-2 text-sm md:text-base">
-            Cause everyone should know the feeling of running in that perfect
-            pair.
+            Cause everyone should know the feeling of running in that perfect pair.
           </p>
           <button className="bg-black rounded-full px-6 py-2 text-white mt-4">
             Find Your Shoe
           </button>
         </div>
       </div>
-
-
 
       {/* Gear Up Section */}
       <div className="py-8 px-4">
@@ -159,14 +121,15 @@ const Hero = () => {
             height={700}
             className="w-full h-auto mx-auto"
           />
-          <h3 className="text-4xl font-medium py-4">FLIGHT ESSENTIALS</h3>
-          <p className="text-sm md:text-base">
-            Your built-to-last, all-week wears—but with style only Jordan Brand
-            can deliver.
-          </p>
-          <button className="bg-black rounded-full px-4 py-2 text-white mt-4">
-            Shop
-          </button>
+          <div>
+            <h3 className="text-4xl font-medium py-4">FLIGHT ESSENTIALS</h3>
+            <p className="text-sm md:text-base">
+              Your built-to-last, all-week wears—but with style only Jordan Brand can deliver.
+            </p>
+            <button className="bg-black rounded-full px-4 py-2 text-white mt-4">
+              Shop
+            </button>
+          </div>
         </div>
       </div>
 
@@ -187,23 +150,32 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Footer Section */}
-      <div className="bg-gray-100 py-10 px-6 text-sm text-gray-600">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {["Icons", "Shoes", "Clothing", "Kid's"].map((category, index) => (
-            <ul key={index}>
-              <h3 className="font-semibold text-black">{category}</h3>
-              {["Air Force 1", "Huarache", "Air Max 90", "Air Max 95"].map(
-                (item, i) => (
-                  <li key={i}>{item}</li>
-                )
-              )}
+      {/* Footer */}
+      <div className="menu grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 px-6 py-8" >
+        {[{
+          title: "Icons",
+          items: ["Air Force 1", "Huarache", "Air Max 90", "Air Max 95"],
+        }, {
+          title: "Shoes",
+          items: ["All Shoes", "Custom Shoes", "Jordan Shoes", "Running Shoes"],
+        }, {
+          title: "Clothing",
+          items: ["All Clothing", "Modest Wear", "Hoodies & Pullovers", "Shirts & Tops"],
+        }, {
+          title: "Kids'",
+          items: ["Infant & Toddler Shoes", "Kids' Shoes", "Kids' Jordan Shoes", "Kids' Basketball Shoes"],
+        }].map(({ title, items }, index) => (
+          <div key={index} className="menu-section">
+            <h3 className="text-lg font-semibold">{title}</h3>
+            <ul className="mt-2">
+              {items.map((item, idx) => <li key={idx}>{item}</li>)}
             </ul>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </div>
+      </div>
+   
   );
 };
 
-export default Hero;
+export default HomePage;
